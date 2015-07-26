@@ -56,6 +56,8 @@ var Boxlayout = (function() {
 					$el.addClass( 'bl-expand-item' );	
 				}
 
+				$('.ajax-content').load("/pages/1");
+
 			} ).find( 'span.bl-icon-close' ).on( 'click', function() {
 				
 				// close the expanded section and scale up the others
