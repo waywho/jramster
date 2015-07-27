@@ -56,7 +56,7 @@ var Boxlayout = (function() {
 					$el.addClass( 'bl-expand-item' );	
 				}
 
-				$('.ajax-content').load("/pages/1");
+				$('.ajax-content').load("/pages/about");
 
 			} ).find( 'span.bl-icon-close' ).on( 'click', function() {
 				
