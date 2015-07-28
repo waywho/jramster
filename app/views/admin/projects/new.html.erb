@@ -1,8 +1,16 @@
 <div class = 'col-xs-offset-2 col-xs-8'>
-	<%= simple_form_for @project, :url => admin_projects_path do |f| %>
+	<%= simple_form_for @project, :url => admin_projects_path(@project) do |f| %>
 	<%= f.input :title %>
 	<%= f.input :overview, input_html: {:id => 'eg-basic', :class => 'boo text-small'} %>
 	<%= f.input :details, input_html: {:id => 'eg-basic', :class => 'boo text-small'} %>
+	<%= f.button :submit %>
+	<% end %>
+
+	<br />
+	<%= simple_form_for @photo, :url => '#' do |f| %>
+	<%= f.input :picture %>
+	<%= f.input :description %>
+	<%= f.check_box :feature_img, as: 'feature Image' %>
 	<%= f.button :submit %>
 	<% end %>
 <div>

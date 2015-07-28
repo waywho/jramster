@@ -10,6 +10,7 @@ class Admin::ProjectsController < ApplicationController
 
 	def new
 		@project = Project.new
+		@photo = Photo.new
 	end
 
 	def edit

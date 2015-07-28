@@ -5,6 +5,15 @@
 	<%= f.input :details, input_html: {:id => 'eg-basic', :class => 'text-small'} %>
 	<%= f.button :submit %>
 	<% end %>
+
+	<br />
+
+	<%= simple_form_for @photo, :url => admin_project_photos_path(@photo) do |f| %>
+	<%= f.input :picture %>
+	<%= f.input :description %>
+	<%= f.check_box :feature_img %>
+	<%= f.button :submit %>
+	<% end %>
 <div>
 
 
