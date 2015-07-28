@@ -1,0 +1,27 @@
+// Place all the styles related to the admin/pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('/assets/icomoon.eot');
+	src:url('/assets/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('/assets/icomoon.woff') format('woff'),
+		url('/assets/icomoon.ttf') format('truetype'),
+		url('/assets/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body, html { font-size: 100%; padding: 0; margin: 0; height: 100%;}
+
+body {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 0.9em;
+    font-weight: 300;
+}
