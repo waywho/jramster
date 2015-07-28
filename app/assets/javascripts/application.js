@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require modernizr.custom
 //= require boxlayout
+//= require froala_editor.min.js
 //= require_tree .
