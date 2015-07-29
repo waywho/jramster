@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#index"
 
-  resources :pages
+  resources :pages, :only => [:index, :show]
 
   namespace :admin do
     resources :pages

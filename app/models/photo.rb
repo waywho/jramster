@@ -1,5 +1,5 @@
 class Photo < ActiveRecord::Base
 	belongs_to :page
-	belongs_to :project
+	has_and_belongs_to_many :projects
 	mount_uploader :picture, PictureUploader
 end
