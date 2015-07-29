@@ -6,9 +6,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pages
-    resources :projects do
-      resources :photos, :only => :create
-    end
+    resources :projects
+    resources :photos
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
