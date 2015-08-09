@@ -11,10 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150729113136) do
+ActiveRecord::Schema.define(version: 20150731105401) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "friendly_id_slugs", force: true do |t|
+    t.string   "slug",                      null: false
+    t.integer  "sluggable_id",              null: false
+    t.string   "sluggable_type", limit: 50
+    t.string   "scope"
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true, using: :btree
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
+  add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
+
+  create_table "gallerizations", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "photo_id"
+    t.integer  "position"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "pages", force: true do |t|
     t.string   "title"
@@ -28,7 +49,6 @@ ActiveRecord::Schema.define(version: 20150729113136) do
   add_index "pages", ["slug"], name: "index_pages_on_slug", using: :btree
 
   create_table "photos", force: true do |t|
-    t.text     "description"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -46,17 +66,11 @@ ActiveRecord::Schema.define(version: 20150729113136) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "feature_image"
+    t.string   "slug"
   end
 
   add_index "projects", ["page_id"], name: "index_projects_on_page_id", using: :btree
-
-  create_table "projects_photos", id: false, force: true do |t|
-    t.integer "project_id"
-    t.integer "photo_id"
-  end
-
-  add_index "projects_photos", ["photo_id"], name: "index_projects_photos_on_photo_id", using: :btree
-  add_index "projects_photos", ["project_id"], name: "index_projects_photos_on_project_id", using: :btree
+  add_index "projects", ["slug"], name: "index_projects_on_slug", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :pages
     resources :projects
-    resources :photos
+    resources :photos do
+      collection do
+        get :edit_multiple
+        post :update_multiple
+      end
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

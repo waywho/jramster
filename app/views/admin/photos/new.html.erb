@@ -1,9 +1,12 @@
 <div class = 'col-xs-offset-2 col-xs-8'>
+	<h2>Upload Photos</h2>
 	<br />
-	<%= simple_form_for @photo , :url => admin_photos_path do |f| %>
-	<%= f.input :picture %>
-	<%= f.input :caption %>
-	<%= f.input :description %>
+	<%= simple_form_for @photo , :url => admin_photos_path, :html => {multipart: true} do |f| %>
+	<%= f.file_field :picture, multiple: true, name: "photo[picture]", id: 'new_picture' %><br />
+	<b>Add to Project(s)</b><br>
+	<%= f.collection_check_boxes :project_ids, @projects, :id, :title, include_hidden: false %>
+	<br />
+	<b>Select files to upload</b><br /><br />
 	<%= f.button :submit %>
 	<% end %>
 </div>

@@ -38,7 +38,11 @@ gem 'wysiwyg-rails'
 
 gem 'font-awesome-rails'
 
-gem 'carrierwave'
+gem 'rmagick', '~> 2.15.3'
+
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
+
+gem 'jquery-fileupload-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -5,16 +5,13 @@ class Admin::ProjectsController < ApplicationController
 		@projects = Project.all
 	end
 
-	def show	
-	end
-
 	def new
 		@project = Project.new
 		@photo = Photo.new
 	end
 
 	def edit
-		@project = Project.friendly.find(params[:id])
+		@project = Project.find(params[:id])
 	end
 
 	def update
@@ -25,6 +22,7 @@ class Admin::ProjectsController < ApplicationController
 
 	def create
 		@project = Project.create(project_params)
+		redirect_to admin_projects_path
 	end
 
 	def destroy
@@ -33,7 +31,7 @@ class Admin::ProjectsController < ApplicationController
 	private
 
 	def current_project
-		@current_project ||= Project.friendly.find(params[:id])
+		@current_project ||= Project.find(params[:id])
 	end
 
 	def project_params

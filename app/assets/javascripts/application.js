@@ -13,7 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery-fileupload/basic-plus
+//= require jquery-fileupload/vendor/tmpl
 //= require modernizr.custom
 //= require boxlayout
 //= require froala_editor.min.js

@@ -16,7 +16,7 @@
 		<tr>
 			<td><%= project.title %></td>
 			<td><%= project.updated_at.to_s(:short) %></td>
-			<td><%= link_to 'Edit', edit_admin_project_path(page) %></td>
+			<td><%= link_to 'Edit', edit_admin_project_path(project) %></td>
 		</tr>
 		<% end %>
 

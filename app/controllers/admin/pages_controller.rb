@@ -5,9 +5,6 @@ class Admin::PagesController < ApplicationController
 		@pages = Page.all
 	end
 
-	def show	
-	end
-
 	def new
 		@page = Page.new
 	end
