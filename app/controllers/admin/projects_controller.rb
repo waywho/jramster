@@ -26,6 +26,8 @@ class Admin::ProjectsController < ApplicationController
 	end
 
 	def destroy
+		current_project.destroy
+		redirect_to admin_projects_path
 	end
 
 	private

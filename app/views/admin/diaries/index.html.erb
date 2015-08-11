@@ -1,0 +1,24 @@
+<div class = 'col-xs-offset-2 col-xs-8'>
+	<h1>Diaries</h1>
+	<%= link_to new_admin_diary_path, :class => 'btn btn-success' do %>
+	<span class = 'glyphicon glyphicon-plus'></span>
+	Add a new diary
+	<% end %>
+	<br />
+	<br />
+	<table class = 'table'>
+		<tr>
+			<th>Diary Title</th>
+			<th>Last Update</th>
+			<th>Actions</th>
+		</tr>
+		<% @diaries.each do |diary| %>
+		<tr>
+			<td><%= diary.title %></td>
+			<td><%= diary.updated_at.to_s(:short) %></td>
+			<td><%= link_to 'Edit', edit_admin_diary_path(diary) %></td>
+		</tr>
+		<% end %>
+
+	</table>
+</div>

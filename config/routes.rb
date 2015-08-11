@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :pages
     resources :projects
+    resources :diaries
     resources :photos do
       collection do
         get :edit_multiple

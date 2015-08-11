@@ -1,8 +1,9 @@
 <div class = 'col-xs-offset-2 col-xs-8'>
-	<h1>Create a New Page</h1>
-	<%= simple_form_for @page, :url => admin_pages_path do |f| %>
+	<h1>Edit Diary Details</h1>
+	<%= simple_form_for @diary, :url => admin_diary_path do |f| %>
 	<%= f.input :title %>
 	<%= f.input :content, input_html: {:id => 'eg-basic', :class => 'text-small'} %>
+	<%= f.input :date %>
 	<%= f.button :submit %>
 	<% end %>
 <div>

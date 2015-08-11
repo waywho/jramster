@@ -20,9 +20,14 @@ class Admin::PagesController < ApplicationController
 	end
 
 	def create
+		@page = Page.create(page_params)
+		redirect_to admin_pages_path
 	end
 
 	def destroy
+		current_page.destroy
+
+		redirect_to admin_pages_path
 	end
 
 	private

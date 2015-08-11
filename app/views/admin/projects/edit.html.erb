@@ -26,6 +26,7 @@
 		</div>
 	</div>
 	<br />
+	<br />
 	<div class = 'col-xs-12'>
 	    <%= link_to 'Add Photos to Project Gallery', edit_multiple_admin_photos_path, :class => 'btn btn-success pull-right' %>
 		<h3>Project Gallery</h3>
@@ -50,9 +51,7 @@
       <%= simple_form_for @project, :url => admin_project_path do |f| %>
       <div class="modal-body">
       	<br />
-      	<%= f.input :feature_image, {:label => 'Upload New Feature Image'} %>
-		<br />
-		<b>Or Select from the Project Gallery</b>
+		<b>Select from the Project Gallery</b>
 		Click a photo to select...
 		<div class = 'row'>
 		<% @project.photos.each do |photo| %>
