@@ -9,12 +9,14 @@
 	<table class = 'table'>
 		<tr>
 			<th>Diary Title</th>
+			<th>Diary Date</th>
 			<th>Last Update</th>
 			<th>Actions</th>
 		</tr>
 		<% @diaries.each do |diary| %>
 		<tr>
 			<td><%= diary.title %></td>
+			<td><%= diary.date.to_s(:short) %></td>
 			<td><%= diary.updated_at.to_s(:short) %></td>
 			<td><%= link_to 'Edit', edit_admin_diary_path(diary) %></td>
 		</tr>

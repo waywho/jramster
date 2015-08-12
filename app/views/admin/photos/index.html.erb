@@ -1,32 +1,29 @@
 <div class = 'col-xs-offset-2 col-xs-10'>
 	<h1>Photos</h1>
-
-	<div class = 'row photos col-xs-8'>
-		<div class = 'col-xs-12'>
-		<% @photos.each do |photo| %>
-			<div class = 'col-xs-6 col-md-3'>
-				<% if photo.projects.blank? %>
-				<%= link_to image_tag photo.picture_url(:thumb).to_s, :class => 'thumbnail' %>
-				<%= photo.caption %>
-				<% end %>
-			</div>
-		<% end %>
+	<div class = 'col-xs-8'>
+		<div class = 'row photos col-xs-12'>
+			<% @photos.each do |photo| %>
+				<div class = 'col-xs-6 col-md-4'>
+					<% if photo.projects.blank? %>
+					<%= link_to image_tag photo.picture_url(:thumb).to_s, :class => 'thumbnail' %>
+					<%= photo.caption %>
+					<% end %>
+				</div>
+			<% end %>
+			<br />
 		</div>
-		<br />
 
 		<% @projects.each do |project| %>
 		<br />
-		<div class = 'col-xs-12'>
+		<div class = 'row col-xs-12'>
 			<h3><%= project.title %></h3>
 			<% project.photos.each do |photo| %>
-			<div class = 'col-xs-6 col-md-3' %>
+			<div class = 'col-xs-6 col-md-4' %>
 			<%= image_tag photo.picture_url(:thumb).to_s, :class => 'thumbnail' %>
 			</div>
 			<% end %>
 		</div>
 		<% end %>
-
-
 	</div>
 	<div class = 'side-panel col-xs-3'>
 		<h3>Upload Photos</h3>
