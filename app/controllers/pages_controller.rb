@@ -4,6 +4,7 @@ class PagesController < ApplicationController
 		@about = Page.find_by(:title => 'About')
 		@diaries = Diary.all
 		@projects = Project.all
+		@latest_project = Project.last
 	end
 
 	def show
