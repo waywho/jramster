@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+
+	#Casein routes
+	namespace :casein do
+		resources :pages do
+        collection do
+          post :edit_multiple
+          post :update_multiple
+          post :import
+      end
+    end
+	end
+
   root "pages#index"
 
   resources :pages
