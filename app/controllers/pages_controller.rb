@@ -1,11 +1,14 @@
 class PagesController < ApplicationController
 
 	def index
-		@about = Page.find_by(:title => 'About')
+		@pages = Page.all
 	end
 
 	def show
 		@page = Page.friendly.find(params[:id])
+	end
+
+	def new
 	end
 
 end

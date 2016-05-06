@@ -29,6 +29,15 @@ gem 'spring',        group: :development
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'casein', github: 'waywho/casein', branch: 'sidebar'
+
+gem 'figaro'
+
+group :development, :test do
+	gem 'rspec-rails', '~> 3.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
