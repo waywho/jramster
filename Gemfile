@@ -29,6 +29,10 @@ gem 'spring',        group: :development
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'refinerycms', '~> 3.0.0'
+
+gem 'refinerycms-authentication-devise', '~> 1.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
