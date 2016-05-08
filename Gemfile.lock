@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/waywho/casein.git
-  revision: 122a062ee7774f365e6ad52cf9b4a70f050cc758
+  revision: 85da4f3690da218cd189680eedfd1e9f42bfc73f
   branch: sidebar
   specs:
     casein (5.1.1.5)
