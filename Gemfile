@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'friendly_id', '~> 5.1.0'
 
 gem 'bootstrap-sass', '~> 3.3.5'
+
+gem 'comfortable_mexican_sofa', '~> 1.8.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

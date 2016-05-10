@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  root "pages#index"
+  
+  ComfortableMexicanSofa::Routing.admin(:path => '/cms-admin')
+  
+  # Make sure this routeset is defined last
+  ComfortableMexicanSofa::Routing.content(:path => '/', :sitemap => false)
+  # root "pages#index"
 
-  resources :pages
+  # resources :pages
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
